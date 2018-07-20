@@ -1,0 +1,199 @@
+<html>
+  <head>
+    <meta charvctk_set="UTF-8">
+    <title>Sound demos for "ClariNet: Parallel Wave Generation in End-to-End Text-to-Speech"</title>
+  </head>
+    <h2>Sound demos for "ClariNet: Parallel Wave Generation in End-to-End Text-to-Speech"</h2>
+
+  <body>
+
+    <p><b>Paper</b>: <a href="https://arxiv.org/pdf/1807.07281.pdf">arXiv<a></p>
+    <p><b>Authors: Wei Ping, Kainan Peng, Jitong Chen. </b>(equal contribution.)</p>
+    <img src="clarinet_on_music_sheet.jpg" alt="A photo of clarinet." width="30%">
+    <div>
+      <h3> Experiment I: Autoregressive wave generation conditioned on mel-spectrogram</h3>
+      We obtain high-fidelity synthesized speech by training an autoregressive WaveNet with the <b>single Gaussian</b> output distribution.
+      <h3> </h3>
+
+    <table>
+      <thead>
+        <tr>
+          </th><th>Ground-truth</th><th>Single Gaussian</th><th>Mixture of Gaussian (k = 10)</th><th>Mixture of Logistic (k = 10)</th><th>Softmax (channel = 2048)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="5"><span>1: Others are students or workers involved in some way with agriculture.</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/ground-truth-24k/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_1gaussian/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_10gaussian/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_10logistic/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_softmax/1.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="5"><span>2: It is the purpose of antitrust law to look to the future.</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/ground-truth-24k/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_1gaussian/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_10gaussian/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_10logistic/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_softmax/2.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="5"><span>3: May I reserve a deck chair, please?</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/ground-truth-24k/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_1gaussian/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_10gaussian/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_10logistic/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_softmax/3.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="5"><span>4: But bullies are like termites.</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/ground-truth-24k/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_1gaussian/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_10gaussian/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_10logistic/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_softmax/4.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="5"><span>5: Of course, once I became a full time musician, I discovered that many of those hard working, dedicated professionals also happened to be miscreant winos.
+</span></td>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/ground-truth-24k/5.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_1gaussian/5.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_10gaussian/5.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_10logistic/5.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_teacher_mos-24k/teacher_softmax/5.wav" type="audio/wav"></audio></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <br> </br>
+    <div>
+      <h3> Experiment II: Parallel wave generation conditioned on mel-spectrogram</h3>
+      We propose a parallel wave generation method based on Gaussian inverse autoregressive flow (IAF). We distill a parallel student-net from an autoregressive teacher-net. Our method generates all samples of an audio waveform in parallel.
+      <h3> </h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th align="left">Parallel Student-Net (Reverse KL<sup>reg</sup> + Frame-loss)</th><th align="left">Parallel Student-Net (Forward KL<sup>reg</sup> + Frame-loss)</th>
+        </tr>
+      </thead>
+
+       <tbody>
+        <tr>
+          <td colspan="2"><span>1: Others are students or workers involved in some way with agriculture.</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_kld/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/forward_kld/1.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span>2: It is the purpose of antitrust law to look to the future.</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_kld/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/forward_kld/2.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span>3: May I reserve a deck chair, please?</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_kld/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/forward_kld/3.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span>4: But bullies are like termites.</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/forward_kld/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_kld/4.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span>5: Of course, once I became a full time musician, I discovered that many of those hard working, dedicated professionals also happened to be miscreant winos.</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_kld/5.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/forward_kld/5.wav" type="audio/wav"></audio></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+    <br> </br>
+    <div>
+      <h3> Experiment III: End-to-End Text-to-Wave Model</h3>
+      We propose the first text-to-wave model for speech synthesis, which is fully convolutional and enables fast end-to-end training from scratch.  We also successfully distill a parallel waveform synthesizer conditioned on the hidden representation in this end-to-end model.
+      <h3> </h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th align="left">Text-to-Wave Teacher</th><th align="left">Text-to-Wave Studnet</th>
+        </tr>
+      </thead>
+      <tbody>
+       <tbody>
+        <tr>
+          <td colspan="2"><span>1: Please call Stella.</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/text-to-wave_mos-24k/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/text-to-wave-distill_mos-24k/1.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span>2: Ask her to bring these things with her from the store.</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/text-to-wave_mos-24k/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/text-to-wave-distill_mos-24k/2.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span>3: Some have accepted it as a miracle without physical explanation.</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/text-to-wave_mos-24k/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/text-to-wave-distill_mos-24k/3.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span>4: The rainbow is a division of white light into many beautiful colors.</td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/text-to-wave_mos-24k/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/text-to-wave-distill_mos-24k/4.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span>5: Throughout the centuries people have explained the rainbow in various ways. <font color="white">html_padding_html_padding_html_padding_html_padding_html_padd</font> </td></span>
+        </tr>
+        <tr>
+          <td><audio controls=""><source src="samples/text-to-wave_mos-24k/5.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/text-to-wave-distill_mos-24k/5.wav" type="audio/wav"></audio></td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+  </body>
+</html>
+
