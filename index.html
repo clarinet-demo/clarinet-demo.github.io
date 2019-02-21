@@ -89,49 +89,54 @@
     <table>
       <thead>
         <tr>
-          <th align="left">Parallel Student-Net (Reverse KL<sup>reg</sup> + Frame-loss)</th><th align="left">Parallel Student-Net (Forward KL<sup>reg</sup> + Frame-loss)</th>
+		<th align="left">Student-Net-1 (Reverse KL<sup>reg</sup> + STFT-loss)</th><th align="left">Student-Net-1 (Forward KL<sup>reg</sup> + STFT-loss)</th><th align="left">Student-Net-2 (Reverse KL<sup>reg</sup> + STFT-loss)</th>
         </tr>
       </thead>
 
        <tbody>
         <tr>
-          <td colspan="2"><span>1: Others are students or workers involved in some way with agriculture.</td></span>
+          <td colspan="3"><span>1: Others are students or workers involved in some way with agriculture.</td></span>
         </tr>
         <tr>
           <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_kld/1.wav" type="audio/wav"></audio></td>
           <td><audio controls=""><source src="samples/wavenet_student_mos-24k/forward_kld/1.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_flows_10X3_30/1.wav" type="audio/wav"></audio></td>
         </tr>
 
         <tr>
-          <td colspan="2"><span>2: It is the purpose of antitrust law to look to the future.</td></span>
+          <td colspan="3"><span>2: It is the purpose of antitrust law to look to the future.</td></span>
         </tr>
         <tr>
           <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_kld/2.wav" type="audio/wav"></audio></td>
           <td><audio controls=""><source src="samples/wavenet_student_mos-24k/forward_kld/2.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_flows_10X3_30/2.wav" type="audio/wav"></audio></td>
         </tr>
 
         <tr>
-          <td colspan="2"><span>3: May I reserve a deck chair, please?</td></span>
+          <td colspan="3"><span>3: May I reserve a deck chair, please?</td></span>
         </tr>
         <tr>
           <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_kld/3.wav" type="audio/wav"></audio></td>
           <td><audio controls=""><source src="samples/wavenet_student_mos-24k/forward_kld/3.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_flows_10X3_30/3.wav" type="audio/wav"></audio></td>
         </tr>
 
         <tr>
-          <td colspan="2"><span>4: But bullies are like termites.</td></span>
+          <td colspan="3"><span>4: But bullies are like termites.</td></span>
         </tr>
         <tr>
           <td><audio controls=""><source src="samples/wavenet_student_mos-24k/forward_kld/4.wav" type="audio/wav"></audio></td>
           <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_kld/4.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_flows_10X3_30/4.wav" type="audio/wav"></audio></td>
         </tr>
 
         <tr>
-          <td colspan="2"><span>5: Of course, once I became a full time musician, I discovered that many of those hard working, dedicated professionals also happened to be miscreant winos.</td></span>
+          <td colspan="3"><span>5: Of course, once I became a full time musician, I discovered that many of those hard working, dedicated professionals also happened to be miscreant winos.</td></span>
         </tr>
         <tr>
           <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_kld/5.wav" type="audio/wav"></audio></td>
           <td><audio controls=""><source src="samples/wavenet_student_mos-24k/forward_kld/5.wav" type="audio/wav"></audio></td>
+          <td><audio controls=""><source src="samples/wavenet_student_mos-24k/reverse_flows_10X3_30/5.wav" type="audio/wav"></audio></td>
         </tr>
 
       </tbody>
@@ -155,7 +160,7 @@
           <td colspan="2"><span>1: Please call Stella.</td></span>
         </tr>
         <tr>
-          <td><audio controls=""><source src="samples/text-to-wave_mos-24k/1.wav" type="audio/wav"></audio></td>
+          <td width="30%"><audio controls=""><source src="samples/text-to-wave_mos-24k/1.wav" type="audio/wav"></audio></td>
           <td><audio controls=""><source src="samples/text-to-wave-distill_mos-24k/1.wav" type="audio/wav"></audio></td>
         </tr>
 
@@ -194,6 +199,62 @@
       </tbody>
     </table>
     </div>
+
+    <br> </br>
+    <div>
+      <h3> Extension: ClariNet for Mandarin Chinese</h3>
+      We also extend ClariNet with linguisitc conditioner for Mandarin Chinese.
+      <h3> </h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th align="left">Gaussian WaveNet Teacher</th><th align="left">Gaussian IAF Student</th>
+        </tr>
+      </thead>
+      <tbody>
+       <tbody>
+        <tr>
+          <td width="35%"><audio controls=""><source src="samples/mandarin/gaussian_wavenet/1.wav" type="audio/wav"></audio></td>
+          <td width="35%"><audio controls=""><source src="samples/mandarin/gaussian_iaf_student/1.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span></td></span>
+        </tr>
+        <tr>
+          <td width="35%"><audio controls=""><source src="samples/mandarin/gaussian_wavenet/2.wav" type="audio/wav"></audio></td>
+          <td width="35%"><audio controls=""><source src="samples/mandarin/gaussian_iaf_student/2.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span></td></span>
+        </tr>
+        <tr>
+          <td width="35%"><audio controls=""><source src="samples/mandarin/gaussian_wavenet/3.wav" type="audio/wav"></audio></td>
+          <td width="35%"><audio controls=""><source src="samples/mandarin/gaussian_iaf_student/3.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span></td></span>
+        </tr>
+        <tr>
+          <td width="35%"><audio controls=""><source src="samples/mandarin/gaussian_wavenet/4.wav" type="audio/wav"></audio></td>
+          <td width="35%"><audio controls=""><source src="samples/mandarin/gaussian_iaf_student/4.wav" type="audio/wav"></audio></td>
+        </tr>
+
+        <tr>
+          <td colspan="2"><span></td></span>
+        </tr>
+        <tr>
+          <td width="35%"><audio controls=""><source src="samples/mandarin/gaussian_wavenet/5.wav" type="audio/wav"></audio></td>
+          <td width="35%"><audio controls=""><source src="samples/mandarin/gaussian_iaf_student/5.wav" type="audio/wav"></audio></td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+
   </body>
 </html>
 
